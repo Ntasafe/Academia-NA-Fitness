@@ -1,0 +1,1758 @@
+:root {
+    color-scheme: light;
+    --ink: #171714;
+    --ink-soft: #242420;
+    --paper: #f2f0e9;
+    --surface: #fbfaf6;
+    --line: #d8d5cd;
+    --muted: #77766e;
+    --orange: #f36b32;
+    --orange-deep: #d94f1c;
+    --white: #fffefa;
+    --font-body: "DM Sans", sans-serif;
+    --font-display: "Oswald", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+body, button, input, select {
+    font-family: var(--font-body);
+}
+
+button, a, input, select, summary {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button, input, select {
+    font-size: inherit;
+}
+
+button, summary {
+    cursor: pointer;
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible {
+    outline: 3px solid var(--orange);
+    outline-offset: 4px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.skip-link {
+    position: fixed;
+    z-index: 20;
+    top: 12px;
+    left: 12px;
+    padding: 10px 14px;
+    transform: translateY(-160%);
+    background: var(--white);
+    color: var(--ink);
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+.site-header {
+    position: relative;
+    z-index: 5;
+    border-bottom: 1px solid rgba(23, 23, 20, 0.12);
+    background: var(--paper);
+}
+
+.header-inner {
+    display: flex;
+    width: min(100% - 88px, 1400px);
+    min-height: 82px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.brand {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 11px;
+}
+
+.brand-mark {
+    display: grid;
+    width: 42px;
+    aspect-ratio: 1;
+    place-items: center;
+    background: var(--orange);
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.brand-name {
+    display: grid;
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.05;
+}
+
+.brand-name span {
+    margin-top: 5px;
+    color: var(--muted);
+    font-family: var(--font-body);
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.primary-navigation {
+    display: flex;
+    align-items: center;
+    gap: clamp(20px, 3vw, 46px);
+}
+
+.primary-navigation > a:not(.nav-cta) {
+    color: #45443f;
+    font-size: 13px;
+    font-weight: 600;
+    transition: color 160ms ease;
+}
+
+.primary-navigation > a:hover:not(.nav-cta) {
+    color: var(--orange-deep);
+}
+
+.nav-cta {
+    display: inline-flex;
+    min-height: 42px;
+    padding: 0 17px;
+    align-items: center;
+    gap: 14px;
+    background: var(--ink);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.nav-cta span, .button span, .text-link span {
+    color: var(--orange);
+    font-size: 17px;
+    line-height: 1;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.hero {
+    display: grid;
+    width: min(100% - 88px, 1400px);
+    min-height: 650px;
+    margin: 0 auto;
+    padding: 64px 0 74px;
+    grid-template-columns: 0.88fr 1.12fr;
+    align-items: center;
+    gap: 7.5%;
+}
+
+.hero-copy {
+    padding: 18px 0 0;
+    animation: arrive 650ms ease-out both;
+}
+
+.eyebrow {
+    display: flex;
+    margin: 0 0 22px;
+    align-items: center;
+    gap: 9px;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.4;
+}
+
+.live-dot {
+    width: 8px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--orange);
+    box-shadow: 0 0 0 4px rgba(243, 107, 50, 0.14);
+}
+
+h1, h2, h3, p {
+    margin-top: 0;
+}
+
+.hero h1, .section-heading h2, .class-intro h2, .club-copy h2, .faq-heading h2, .contact-copy h2 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 0.98;
+}
+
+.hero h1 {
+    max-width: 590px;
+    font-size: 76px;
+}
+
+.hero h1 span, .section-heading h2 span, .class-intro h2 span, .club-copy h2 span, .faq-heading h2 span, .contact-copy h2 span {
+    color: var(--orange);
+}
+
+.hero-intro {
+    max-width: 440px;
+    margin: 25px 0 0;
+    color: #626159;
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.hero-actions {
+    display: flex;
+    margin-top: 31px;
+    align-items: center;
+    gap: 27px;
+}
+
+.button {
+    display: inline-flex;
+    min-height: 52px;
+    padding: 0 19px;
+    align-items: center;
+    justify-content: center;
+    gap: 17px;
+    border: 1px solid transparent;
+    font-size: 12px;
+    font-weight: 700;
+    transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.button-primary {
+    background: var(--orange);
+    color: var(--ink);
+}
+
+.button-primary:hover {
+    background: #ff814a;
+}
+
+.button-outline {
+    border-color: var(--ink);
+    color: var(--ink);
+}
+
+.button-outline:hover {
+    background: var(--ink);
+    color: var(--white);
+}
+
+.text-link {
+    display: inline-flex;
+    min-height: 42px;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.hero-facts {
+    display: grid;
+    margin-top: 54px;
+    padding-top: 19px;
+    border-top: 1px solid var(--line);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.hero-facts div {
+    display: grid;
+    gap: 3px;
+}
+
+.hero-facts strong {
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.hero-facts span {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.hero-visual {
+    position: relative;
+    min-width: 0;
+    animation: arrive 720ms 100ms ease-out both;
+}
+
+.hero-visual::before {
+    position: absolute;
+    z-index: -1;
+    top: -18px;
+    right: -18px;
+    width: 47%;
+    aspect-ratio: 1;
+    background: var(--orange);
+    content: "";
+}
+
+.hero-visual img {
+    width: 100%;
+    aspect-ratio: 1.12 / 1;
+    object-fit: cover;
+    object-position: center;
+}
+
+.image-caption {
+    display: flex;
+    margin-top: 11px;
+    justify-content: space-between;
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.hero-stamp {
+    position: absolute;
+    right: -27px;
+    bottom: 60px;
+    display: grid;
+    width: 112px;
+    aspect-ratio: 1;
+    padding: 13px;
+    align-content: center;
+    justify-items: center;
+    border: 1px solid var(--ink);
+    border-radius: 50%;
+    background: var(--paper);
+    transform: rotate(9deg);
+}
+
+.hero-stamp span:first-child {
+    font-family: var(--font-display);
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.hero-stamp span:last-child {
+    margin-top: 4px;
+    font-size: 8px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.intro-strip {
+    overflow: hidden;
+    padding: 15px 20px;
+    background: var(--orange);
+    color: var(--ink);
+}
+
+.intro-strip p {
+    display: flex;
+    width: min(100%, 1320px);
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.intro-strip span {
+    font-size: 14px;
+}
+
+.section {
+    width: min(100% - 112px, 1280px);
+    margin: 0 auto;
+}
+
+.plans-section {
+    padding-top: 105px;
+    padding-bottom: 110px;
+}
+
+.section-heading {
+    display: flex;
+    margin-bottom: 42px;
+    align-items: end;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.section-heading .eyebrow, .class-intro .eyebrow, .club-copy .eyebrow, .faq-heading .eyebrow, .contact-copy .eyebrow {
+    margin-bottom: 13px;
+}
+
+.section-heading h2, .class-intro h2, .club-copy h2, .faq-heading h2, .contact-copy h2 {
+    font-size: 52px;
+}
+
+.billing-control {
+    display: flex;
+    min-height: 40px;
+    align-items: center;
+    gap: 11px;
+    color: #595850;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.billing-control b {
+    margin-left: 3px;
+    color: var(--orange-deep);
+    font-size: 10px;
+}
+
+.switch {
+    position: relative;
+    display: inline-flex;
+    width: 39px;
+    height: 23px;
+    cursor: pointer;
+}
+
+.switch input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+}
+
+.switch-track {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #a09e96;
+    border-radius: 20px;
+    background: #dedbd3;
+    transition: background 180ms ease;
+}
+
+.switch-track::after {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 15px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--white);
+    content: "";
+    transition: transform 180ms ease;
+}
+
+.switch input:checked + .switch-track {
+    background: var(--ink);
+}
+
+.switch input:checked + .switch-track::after {
+    transform: translateX(15px);
+}
+
+.switch input:focus-visible + .switch-track {
+    outline: 3px solid var(--orange);
+    outline-offset: 3px;
+}
+
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 16px;
+}
+
+.plan-card {
+    display: flex;
+    min-width: 0;
+    min-height: 420px;
+    padding: 27px 25px 24px;
+    flex-direction: column;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    animation: arrive 500ms ease-out both;
+}
+
+.plan-card:nth-child(2) {
+    animation-delay: 70ms;
+}
+
+.plan-card:nth-child(3) {
+    animation-delay: 140ms;
+}
+
+.plan-featured {
+    border-color: var(--ink);
+    background: var(--ink);
+    color: var(--white);
+}
+
+.plan-topline {
+    display: flex;
+    min-height: 20px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.plan-featured .plan-topline {
+    color: #c8c6bd;
+}
+
+.plan-mark {
+    color: var(--orange);
+    font-size: 16px;
+}
+
+.plan-badge {
+    padding: 5px 7px;
+    background: var(--orange);
+    color: var(--ink);
+    font-size: 8px;
+}
+
+.plan-card h3 {
+    margin: 19px 0 4px;
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.plan-description {
+    min-height: 46px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.plan-featured .plan-description, .plan-featured .billing-note {
+    color: #b9b7ae;
+}
+
+.plan-price {
+    display: flex;
+    margin: 22px 0 0;
+    align-items: baseline;
+    gap: 6px;
+    font-family: var(--font-display);
+    font-size: 35px;
+    line-height: 1;
+}
+
+.plan-price small {
+    color: var(--muted);
+    font-family: var(--font-body);
+    font-size: 10px;
+}
+
+.plan-featured .plan-price small {
+    color: #b9b7ae;
+}
+
+.billing-note {
+    min-height: 24px;
+    margin: 8px 0 13px;
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.plan-card .button {
+    width: 100%;
+    min-height: 46px;
+}
+
+.plan-features {
+    display: grid;
+    margin: 20px 0 0;
+    padding: 17px 0 0;
+    gap: 10px;
+    border-top: 1px solid var(--line);
+    list-style: none;
+    color: #53524b;
+    font-size: 10px;
+}
+
+.plan-featured .plan-features {
+    border-color: #41413a;
+    color: #dedbd2;
+}
+
+.plan-features li::before {
+    margin-right: 9px;
+    color: var(--orange);
+    content: "+";
+    font-weight: 700;
+}
+
+.section-footnote {
+    margin: 16px 0 0;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.classes-section {
+    background: var(--ink);
+    color: var(--white);
+}
+
+.class-layout {
+    display: grid;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    grid-template-columns: 0.78fr 1.22fr;
+    align-items: start;
+    gap: 9%;
+}
+
+.class-intro .eyebrow {
+    color: #aaa89f;
+}
+
+.class-intro h2 {
+    font-size: 48px;
+}
+
+.class-intro > p:not(.eyebrow):not(.demo-note) {
+    max-width: 350px;
+    margin: 22px 0 0;
+    color: #b9b7ae;
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+.booking-counter {
+    display: flex;
+    margin-top: 37px;
+    align-items: center;
+    gap: 13px;
+}
+
+.counter-number {
+    color: var(--orange);
+    font-family: var(--font-display);
+    font-size: 36px;
+    line-height: 1;
+}
+
+.booking-counter > span:last-child {
+    color: #aaa89f;
+    font-size: 8px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.demo-note {
+    max-width: 360px;
+    margin: 23px 0 0;
+    color: #a9a79e;
+    font-size: 10px;
+    line-height: 1.65;
+}
+
+.schedule-panel {
+    min-width: 0;
+}
+
+.schedule-header {
+    display: flex;
+    min-height: 54px;
+    align-items: start;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.schedule-kicker, .schedule-clock {
+    color: #a9a79e;
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.schedule-header p {
+    margin: 4px 0 0;
+    font-family: var(--font-display);
+    font-size: 21px;
+}
+
+.schedule-header p span {
+    margin-left: 6px;
+    color: #a9a79e;
+    font-family: var(--font-body);
+    font-size: 10px;
+}
+
+.day-tabs {
+    display: grid;
+    margin: 12px 0 0;
+    border-bottom: 1px solid #484841;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.day-tabs button {
+    position: relative;
+    min-width: 0;
+    height: 43px;
+    border: 0;
+    background: transparent;
+    color: #aaa89f;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.day-tabs button[aria-selected="true"] {
+    color: var(--orange);
+}
+
+.day-tabs button[aria-selected="true"]::after {
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    height: 2px;
+    background: var(--orange);
+    content: "";
+}
+
+.class-list {
+    min-height: 250px;
+}
+
+.class-row {
+    display: grid;
+    min-height: 69px;
+    padding: 11px 0;
+    border-bottom: 1px solid #373731;
+    grid-template-columns: 58px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 13px;
+    animation: row-arrive 240ms ease-out both;
+}
+
+.class-time {
+    color: var(--orange);
+    font-family: var(--font-display);
+    font-size: 17px;
+}
+
+.class-details {
+    min-width: 0;
+}
+
+.class-details h3 {
+    overflow: hidden;
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.class-details p {
+    overflow: hidden;
+    margin: 3px 0 0;
+    color: #aaa89f;
+    font-size: 9px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.book-button {
+    min-width: 76px;
+    min-height: 34px;
+    padding: 0 10px;
+    border: 1px solid #706e65;
+    background: transparent;
+    color: var(--white);
+    font-size: 9px;
+    font-weight: 700;
+    transition: color 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.book-button:hover, .book-button.is-booked {
+    border-color: var(--orange);
+    background: var(--orange);
+    color: var(--ink);
+}
+
+.schedule-empty {
+    display: grid;
+    min-height: 210px;
+    margin: 0;
+    place-items: center;
+    color: #aaa89f;
+    font-size: 12px;
+    text-align: center;
+}
+
+.schedule-footnote {
+    margin: 14px 0 0;
+    color: #a9a79e;
+    font-size: 9px;
+}
+
+.training-section {
+    padding-top: 105px;
+    padding-bottom: 112px;
+}
+
+.heading-aside {
+    max-width: 290px;
+    margin: 0 0 3px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.training-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.training-card {
+    display: flex;
+    min-height: 265px;
+    padding: 23px 23px 19px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.training-card-dark {
+    background: var(--ink);
+    color: var(--white);
+}
+
+.training-card-orange {
+    background: var(--orange);
+    color: var(--ink);
+}
+
+.training-card-light {
+    border: 1px solid var(--line);
+    background: var(--surface);
+}
+
+.training-index {
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.training-card h3 {
+    margin: 27px 0 7px;
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.05;
+}
+
+.training-card > p {
+    max-width: 310px;
+    margin: 0;
+    color: #cbc9c0;
+    font-size: 11px;
+    line-height: 1.65;
+}
+
+.training-card-orange > p {
+    color: #4b2b1f;
+}
+
+.training-card-light > p {
+    color: var(--muted);
+}
+
+.training-meta {
+    display: flex;
+    margin-top: 27px;
+    padding-top: 12px;
+    justify-content: space-between;
+    gap: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.training-card-orange .training-meta, .training-card-light .training-meta {
+    border-color: rgba(23, 23, 20, 0.22);
+}
+
+.club-section {
+    display: grid;
+    min-height: 530px;
+    grid-template-columns: 1fr 1fr;
+    background: #e5e2da;
+}
+
+.club-photo {
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.club-photo img {
+    width: 100%;
+    height: 100%;
+    min-height: 530px;
+    object-fit: cover;
+}
+
+.club-copy {
+    display: flex;
+    padding: 70px clamp(40px, 8vw, 130px);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.club-copy h2 {
+    font-size: 52px;
+}
+
+.club-copy > p:not(.eyebrow) {
+    max-width: 420px;
+    margin: 19px 0 0;
+    color: #626159;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.club-details {
+    display: grid;
+    width: 100%;
+    max-width: 435px;
+    margin: 25px 0 17px;
+    padding: 18px 0;
+    border-top: 1px solid #c5c1b9;
+    border-bottom: 1px solid #c5c1b9;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.club-details div {
+    display: grid;
+    align-content: start;
+    gap: 4px;
+}
+
+.club-details span {
+    color: var(--muted);
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.club-details strong {
+    font-size: 11px;
+}
+
+.club-details small {
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.text-link-dark {
+    color: var(--ink);
+}
+
+.faq-section {
+    display: grid;
+    padding-top: 105px;
+    padding-bottom: 108px;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 11%;
+}
+
+.faq-heading h2 {
+    font-size: 43px;
+}
+
+.faq-list details {
+    border-bottom: 1px solid var(--line);
+}
+
+.faq-list details:first-child {
+    border-top: 1px solid var(--line);
+}
+
+.faq-list summary {
+    position: relative;
+    padding: 18px 29px 18px 0;
+    font-size: 12px;
+    font-weight: 700;
+    list-style: none;
+}
+
+.faq-list summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-list summary::after {
+    position: absolute;
+    top: 15px;
+    right: 2px;
+    color: var(--orange-deep);
+    content: "+";
+    font-family: var(--font-display);
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.faq-list details[open] summary::after {
+    content: "−";
+}
+
+.faq-list details p {
+    max-width: 580px;
+    margin: -3px 28px 17px 0;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.contact-section {
+    display: grid;
+    padding: 83px max(56px, calc((100vw - 1280px) / 2));
+    grid-template-columns: 1fr 0.75fr;
+    align-items: center;
+    gap: 10%;
+    background: var(--ink);
+    color: var(--white);
+}
+
+.contact-copy h2 {
+    font-size: 49px;
+}
+
+.contact-copy > p:not(.eyebrow) {
+    max-width: 390px;
+    margin: 19px 0 0;
+    color: #b9b7ae;
+    font-size: 12px;
+    line-height: 1.75;
+}
+
+.contact-copy .contact-demo-note {
+    color: #a9a79e;
+    font-size: 10px;
+}
+
+.contact-form, .booking-dialog form {
+    display: grid;
+    gap: 9px;
+}
+
+.contact-form label, .booking-dialog label {
+    margin-top: 8px;
+    color: #cfcdc4;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.contact-form input, .contact-form select, .booking-dialog input:not([type="hidden"]) {
+    width: 100%;
+    min-height: 45px;
+    padding: 0 12px;
+    border: 1px solid #55554e;
+    border-radius: 0;
+    background: #20201c;
+    color: var(--white);
+    font-size: 11px;
+}
+
+.contact-form input::placeholder {
+    color: #96948b;
+}
+
+.contact-form select:invalid {
+    color: #96948b;
+}
+
+.contact-form .button {
+    width: max-content;
+    margin-top: 12px;
+}
+
+.site-footer {
+    display: flex;
+    min-height: 90px;
+    padding: 17px max(44px, calc((100vw - 1400px) / 2));
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: #10100e;
+    color: var(--white);
+}
+
+.footer-brand .brand-name span {
+    color: #aaa89f;
+}
+
+.site-footer > p {
+    margin: 0;
+    color: #aaa89f;
+    font-size: 10px;
+}
+
+.site-footer > p span {
+    margin-left: 9px;
+}
+
+.site-footer > a:last-child {
+    color: #d2d0c8;
+    font-size: 10px;
+}
+
+.booking-dialog {
+    width: min(100% - 32px, 450px);
+    padding: 33px;
+    border: 0;
+    background: var(--ink);
+    color: var(--white);
+}
+
+.booking-dialog::backdrop {
+    background: rgba(13, 13, 11, 0.76);
+    backdrop-filter: blur(3px);
+}
+
+.booking-dialog form {
+    position: relative;
+}
+
+.booking-dialog .eyebrow {
+    margin-bottom: 0;
+    color: #aaa89f;
+}
+
+.booking-dialog h2 {
+    max-width: 330px;
+    margin: 7px 0 9px;
+    font-family: var(--font-display);
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.booking-dialog h2 span {
+    color: var(--orange);
+}
+
+.booking-dialog .demo-note {
+    margin: 6px 0 9px;
+}
+
+.booking-dialog .button {
+    width: 100%;
+    margin-top: 6px;
+}
+
+.dialog-close {
+    position: absolute;
+    top: -13px;
+    right: -10px;
+    width: 36px;
+    aspect-ratio: 1;
+    border: 1px solid #55554e;
+    background: transparent;
+    color: var(--white);
+    font-size: 22px;
+}
+
+.toast {
+    position: fixed;
+    z-index: 10;
+    right: 22px;
+    bottom: 22px;
+    max-width: min(420px, calc(100% - 44px));
+    padding: 14px 18px;
+    border-left: 3px solid var(--orange);
+    background: var(--ink);
+    color: var(--white);
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.22);
+    font-size: 11px;
+}
+
+.toast[hidden] {
+    display: none;
+}
+
+@keyframes arrive {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes row-arrive {
+    from { opacity: 0; transform: translateX(7px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 1100px) {
+    .header-inner, .hero {
+        width: min(100% - 56px, 1400px);
+    }
+
+    .hero {
+        min-height: 580px;
+        gap: 5%;
+    }
+
+    .hero h1 {
+        font-size: 64px;
+    }
+
+    .section {
+        width: min(100% - 72px, 1280px);
+    }
+
+    .section-heading h2 {
+        font-size: 46px;
+    }
+
+    .plan-card {
+        padding-right: 19px;
+        padding-left: 19px;
+    }
+
+    .plan-price {
+        font-size: 31px;
+    }
+
+    .class-layout {
+        gap: 6%;
+    }
+
+    .club-copy {
+        padding-right: 48px;
+        padding-left: 48px;
+    }
+
+    .contact-section {
+        padding-right: 36px;
+        padding-left: 36px;
+    }
+}
+
+@media (max-width: 800px) {
+    .header-inner {
+        position: relative;
+        min-height: 72px;
+    }
+
+    .menu-toggle {
+        display: inline-flex;
+        min-height: 40px;
+        padding: 0 4px 0 12px;
+        align-items: center;
+        gap: 9px;
+        border: 0;
+        background: transparent;
+        color: var(--ink);
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .menu-icon {
+        display: grid;
+        width: 18px;
+        gap: 5px;
+    }
+
+    .menu-icon i {
+        height: 2px;
+        background: currentColor;
+    }
+
+    .primary-navigation {
+        position: absolute;
+        top: calc(100% + 1px);
+        right: -28px;
+        left: -28px;
+        display: none;
+        padding: 15px 28px 22px;
+        align-items: stretch;
+        flex-direction: column;
+        gap: 0;
+        border-bottom: 1px solid var(--line);
+        background: var(--paper);
+    }
+
+    .primary-navigation.is-open {
+        display: flex;
+    }
+
+    .primary-navigation > a:not(.nav-cta) {
+        padding: 12px 0;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .nav-cta {
+        margin-top: 15px;
+        justify-content: space-between;
+    }
+
+    .hero {
+        min-height: 0;
+        padding-top: 58px;
+        padding-bottom: 64px;
+        grid-template-columns: 1fr;
+        gap: 39px;
+    }
+
+    .hero-copy {
+        max-width: 650px;
+    }
+
+    .hero h1 {
+        max-width: 620px;
+        font-size: 66px;
+    }
+
+    .hero-intro {
+        max-width: 550px;
+    }
+
+    .hero-facts {
+        max-width: 540px;
+        margin-top: 35px;
+    }
+
+    .hero-visual {
+        margin-right: 13px;
+    }
+
+    .hero-visual img {
+        aspect-ratio: 1.45 / 1;
+    }
+
+    .hero-stamp {
+        right: -16px;
+        bottom: 46px;
+    }
+
+    .intro-strip p {
+        width: max-content;
+        min-width: 100%;
+        justify-content: flex-start;
+    }
+
+    .section {
+        width: min(100% - 56px, 650px);
+    }
+
+    .plans-section, .training-section {
+        padding-top: 76px;
+        padding-bottom: 80px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .section-heading h2 {
+        font-size: 47px;
+    }
+
+    .plans-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .plan-card {
+        min-height: 0;
+        padding: 24px;
+    }
+
+    .plan-description {
+        min-height: 0;
+    }
+
+    .plan-card .button {
+        width: max-content;
+        min-width: 210px;
+    }
+
+    .class-layout {
+        padding-top: 76px;
+        padding-bottom: 76px;
+        grid-template-columns: 1fr;
+        gap: 39px;
+    }
+
+    .class-intro h2 {
+        font-size: 46px;
+    }
+
+    .booking-counter {
+        margin-top: 23px;
+    }
+
+    .training-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .training-card {
+        min-height: 230px;
+    }
+
+    .club-section {
+        grid-template-columns: 1fr;
+    }
+
+    .club-photo img {
+        max-height: 420px;
+        min-height: 0;
+        aspect-ratio: 1.5 / 1;
+    }
+
+    .club-copy {
+        padding: 56px max(28px, calc((100vw - 650px) / 2));
+    }
+
+    .faq-section {
+        padding-top: 76px;
+        padding-bottom: 80px;
+        grid-template-columns: 1fr;
+        gap: 34px;
+    }
+
+    .contact-section {
+        padding: 67px max(28px, calc((100vw - 650px) / 2));
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 520px) {
+    body {
+        font-size: 14px;
+    }
+
+    .header-inner, .hero {
+        width: calc(100% - 36px);
+    }
+
+    .header-inner {
+        min-height: 66px;
+    }
+
+    .primary-navigation {
+        right: -18px;
+        left: -18px;
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+
+    .brand-mark {
+        width: 37px;
+        font-size: 18px;
+    }
+
+    .brand-name {
+        font-size: 17px;
+    }
+
+    .hero {
+        padding-top: 46px;
+        padding-bottom: 48px;
+        gap: 31px;
+    }
+
+    .hero .eyebrow {
+        margin-bottom: 17px;
+        font-size: 9px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero-intro {
+        margin-top: 18px;
+        font-size: 13px;
+    }
+
+    .hero-actions {
+        margin-top: 23px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .hero-actions .button {
+        width: 100%;
+    }
+
+    .hero-facts {
+        margin-top: 25px;
+        gap: 8px;
+    }
+
+    .hero-facts strong {
+        font-size: 16px;
+    }
+
+    .hero-facts span {
+        max-width: 95px;
+        font-size: 9px;
+        line-height: 1.4;
+    }
+
+    .hero-visual img {
+        aspect-ratio: 1.12 / 1;
+    }
+
+    .hero-visual::before {
+        top: -9px;
+        right: -9px;
+    }
+
+    .hero-stamp {
+        right: -9px;
+        bottom: 36px;
+        width: 82px;
+        padding: 9px;
+    }
+
+    .hero-stamp span:first-child {
+        font-size: 20px;
+    }
+
+    .hero-stamp span:last-child {
+        font-size: 7px;
+    }
+
+    .image-caption {
+        font-size: 8px;
+    }
+
+    .intro-strip {
+        padding: 13px 18px;
+    }
+
+    .intro-strip p {
+        gap: 16px;
+        font-size: 9px;
+    }
+
+    .section {
+        width: calc(100% - 36px);
+    }
+
+    .plans-section, .training-section {
+        padding-top: 63px;
+        padding-bottom: 66px;
+    }
+
+    .section-heading h2, .class-intro h2, .club-copy h2, .contact-copy h2 {
+        font-size: 39px;
+    }
+
+    .faq-heading h2 {
+        font-size: 37px;
+    }
+
+    .section-heading {
+        margin-bottom: 27px;
+        gap: 16px;
+    }
+
+    .billing-control {
+        flex-wrap: wrap;
+        gap: 9px;
+        font-size: 10px;
+    }
+
+    .plan-card {
+        padding: 21px 18px;
+    }
+
+    .plan-card h3 {
+        font-size: 29px;
+    }
+
+    .plan-price {
+        font-size: 32px;
+    }
+
+    .plan-card .button {
+        width: 100%;
+    }
+
+    .section-footnote {
+        line-height: 1.6;
+    }
+
+    .class-layout {
+        padding-top: 64px;
+        padding-bottom: 65px;
+        gap: 31px;
+    }
+
+    .schedule-header {
+        min-height: 58px;
+    }
+
+    .schedule-header p {
+        font-size: 19px;
+    }
+
+    .schedule-header p span {
+        display: block;
+        margin: 2px 0 0;
+    }
+
+    .schedule-clock {
+        max-width: 75px;
+        padding-top: 4px;
+        text-align: right;
+    }
+
+    .day-tabs button {
+        height: 41px;
+        font-size: 8px;
+    }
+
+    .class-row {
+        min-height: 72px;
+        padding: 9px 0;
+        grid-template-columns: 46px minmax(0, 1fr) auto;
+        gap: 8px;
+    }
+
+    .class-time {
+        font-size: 15px;
+    }
+
+    .class-details h3 {
+        font-size: 10px;
+    }
+
+    .class-details p {
+        font-size: 8px;
+    }
+
+    .book-button {
+        min-width: 65px;
+        min-height: 34px;
+        padding: 0 7px;
+        font-size: 8px;
+    }
+
+    .training-card {
+        min-height: 222px;
+        padding: 20px;
+    }
+
+    .training-card h3 {
+        font-size: 26px;
+    }
+
+    .training-meta {
+        font-size: 7px;
+    }
+
+    .club-photo img {
+        aspect-ratio: 1.15 / 1;
+    }
+
+    .club-copy {
+        padding: 49px 18px 52px;
+    }
+
+    .club-details {
+        gap: 10px;
+    }
+
+    .club-details strong {
+        font-size: 10px;
+    }
+
+    .faq-section {
+        padding-top: 65px;
+        padding-bottom: 69px;
+        gap: 28px;
+    }
+
+    .faq-list summary {
+        font-size: 11px;
+    }
+
+    .contact-section {
+        padding: 56px 18px;
+        gap: 25px;
+    }
+
+    .contact-form .button {
+        width: 100%;
+    }
+
+    .site-footer {
+        min-height: 0;
+        padding: 22px 18px;
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .site-footer > p {
+        order: 3;
+        width: 100%;
+        font-size: 9px;
+    }
+
+    .site-footer > p span {
+        margin-left: 5px;
+    }
+
+    .site-footer > a:last-child {
+        font-size: 9px;
+    }
+
+    .booking-dialog {
+        padding: 27px 21px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
